@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "470028769161",
+    "project_id": "chatappudemy-39fc4",
+    "storage_bucket": "chatappudemy-39fc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470028769161:android:71bfb43b5e8ce6da377358",
+        "android_client_info": {
+          "package_name": "com.learn.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470028769161-j1id2vt4aac858crtman72g97cp4hgtm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.learn.chat_app",
+            "certificate_hash": "41d5329de32de85724c1e229d26e6ea1648f564f"
+          }
+        },
+        {
+          "client_id": "470028769161-0tu3su80unqsvuilj6267i969qlsvaqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8rttRb60ooWYI24NjA3CDQklAvHuVTlU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470028769161-0tu3su80unqsvuilj6267i969qlsvaqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
