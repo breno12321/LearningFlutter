@@ -27,7 +27,9 @@ class _ChatPageState extends State<ChatPage> {
     super.initState();
 
     FirebaseAuth.instance.authStateChanges().listen((event) {
-      _currentUser = event;
+      setState(() {
+        _currentUser = event;
+      });
     });
   }
 
@@ -91,8 +93,24 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text("Chat"),
+        centerTitle: true,
+        title: Text(_currentUser != null
+            ? 'Olá ${_currentUser.displayName}'
+            : "Chat App"),
         elevation: 0,
+        actions: [
+          _currentUser != null
+              ? IconButton(
+                  icon: Icon(Icons.exit_to_app),
+                  onPressed: () {
+                    FirebaseAuth.instance.signOut();
+                    googleSignIn.signOut();
+                    _scaffoldKey.currentState.showSnackBar(
+                        SnackBar(content: Text("Usuário saiu com sucesso!")));
+                  },
+                )
+              : Container(),
+        ],
       ),
       body: Column(
         children: [
@@ -116,7 +134,7 @@ class _ChatPageState extends State<ChatPage> {
                       itemCount: documentsList.length,
                       reverse: true,
                       itemBuilder: (context, index) {
-                        return ChatMessage(documentsList[index].data());
+                        return ChatMessage(documentsList[index].data(), true);
                       },
                     );
                 }
